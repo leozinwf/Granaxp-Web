@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-roxo-principal: #53008C;
+  --color-roxo-claro: #820AD1;
+  --color-roxo-hover: #7833bd;
+
+  --color-dark-fundo: #171228;
+  --color-dark-card: #241D3B;
+  --color-dark-borda: #3B305A;
+  --color-dark-texto: #9E93B4;
+}
+
+html, body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark-fundo text-slate-100 transition-colors duration-500;
+}

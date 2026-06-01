@@ -1,0 +1,1 @@
+export default function AdminLayout({ children }: { children: React.ReactNode }) { return (<div className='flex h-screen'><aside className='w-64 bg-zinc-900 text-white p-4'>Menu Admin</aside><main className='flex-1 p-8 bg-zinc-50'>{children}</main></div>) }
