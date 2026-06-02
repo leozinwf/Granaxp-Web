@@ -6,7 +6,7 @@ export default function Footer() {
       <div className='py-20 px-6 text-center max-w-3xl mx-auto'>
         <h2 className='text-3xl font-bold mb-6'>Pronto para o próximo nível?</h2>
         <p className='text-dark-texto mb-8'>Junte-se a nós e comece a transformar sua relação com o dinheiro hoje mesmo.</p>
-        <Link href='https://grana-xp.vercel.app/' className='inline-block bg-roxo-claro hover:bg-roxo-hover text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(130,10,209,0.4)] hover:-translate-y-1'>
+        <Link href='https://app.granaxp.com.br/' className='inline-block bg-roxo-claro hover:bg-roxo-hover text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(130,10,209,0.4)] hover:-translate-y-1'>
           Criar Conta Gratuitamente
         </Link>
       </div>

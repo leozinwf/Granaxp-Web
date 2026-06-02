@@ -23,7 +23,7 @@ export default function Home() {
         </p>
         
         <div className='flex flex-col sm:flex-row gap-4 w-full sm:w-auto z-10'>
-          <Link href='https://grana-xp.vercel.app/' className='bg-roxo-claro hover:bg-roxo-hover text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg shadow-roxo-claro/20 hover:-translate-y-1 flex items-center justify-center gap-2'>
+          <Link href='https://app.granaxp.com.br/' className='bg-roxo-claro hover:bg-roxo-hover text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg shadow-roxo-claro/20 hover:-translate-y-1 flex items-center justify-center gap-2'>
             <Gamepad2 size={20} />
             Começar a Jogar
           </Link>
