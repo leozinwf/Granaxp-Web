@@ -18,7 +18,6 @@ export async function criarPost(formData: FormData) {
 
   let image_url = '';
 
-  // Se o utilizador enviou uma imagem, fazemos o upload para o Bucket
   if (imageFile && imageFile.size > 0) {
     const fileExt = imageFile.name.split('.').pop();
     const fileName = `${slug}-${Date.now()}.${fileExt}`;
@@ -28,7 +27,6 @@ export async function criarPost(formData: FormData) {
       .upload(fileName, imageFile);
       
     if (!uploadError) {
-      // Pega o URL público da imagem recém-carregada
       const { data: publicUrlData } = supabase.storage.from('blog-images').getPublicUrl(fileName);
       image_url = publicUrlData.publicUrl;
     } else {
@@ -36,7 +34,6 @@ export async function criarPost(formData: FormData) {
     }
   }
 
-  // Guarda o post na base de dados
   const { error } = await supabase.from('posts').insert({
     title,
     slug,
@@ -60,7 +57,6 @@ export async function apagarPost(id: string) {
   
   const supabase = await createClient();
   
-  // 1. Apagar o post da base de dados
   const { error } = await supabase.from('posts').delete().eq('id', id);
   
   if (error) {

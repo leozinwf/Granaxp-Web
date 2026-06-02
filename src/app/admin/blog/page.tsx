@@ -13,7 +13,6 @@ export default function BlogAdmin() {
   const router = useRouter();
   const supabase = createClient();
 
-  // Carrega os posts ao abrir a página
   useEffect(() => {
     async function loadPosts() {
       const { data } = await supabase
@@ -27,7 +26,6 @@ export default function BlogAdmin() {
     loadPosts();
   }, [supabase]);
 
-  // Função para deletar com confirmação
   async function handleDelete(id: string) {
     if (confirm('Tem a certeza que deseja apagar esta publicação? Esta ação é irreversível.')) {
       const result = await apagarPost(id);

@@ -5,13 +5,11 @@ import { Shield, ShieldAlert, ShieldCheck } from 'lucide-react';
 export default async function PermissoesAdmin() {
   const supabase = await createClient();
 
-  // Busca todos os usuários ordenados pelos mais recentes
   const { data: usuarios } = await supabase
     .from('users')
     .select('id, nickname, email, admin')
     .order('created_at', { ascending: false });
 
-  // Server Action para alternar o status de administrador
   async function toggleAdmin(formData: FormData) {
     'use server';
     const id = formData.get('id') as string;
@@ -19,13 +17,11 @@ export default async function PermissoesAdmin() {
     
     const supabaseServer = await createClient();
     
-    // Atualiza o banco de dados invertendo o status
     await supabaseServer
       .from('users')
       .update({ admin: !currentAdmin })
       .eq('id', id);
       
-    // Atualiza a página automaticamente para mostrar a mudança
     revalidatePath('/admin/permissoes');
   }
 

@@ -8,8 +8,6 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import 'react-quill-new/dist/quill.snow.css';
 
-// dynamic returns a component with unknown props which can cause TS errors
-// when passing ReactQuill-specific props. Cast to any to satisfy the compiler.
 const ReactQuill: any = dynamic(() => import('react-quill-new'), { ssr: false }) as any;
 
 export default function EditarPost({ params }: { params: Promise<{ id: string }> }) {
@@ -36,11 +34,9 @@ export default function EditarPost({ params }: { params: Promise<{ id: string }>
     const imageFile = formData.get('image') as File;
     let image_url = post.image_url;
 
-    // Se o usuário selecionou uma nova imagem, fazemos o upload
     if (imageFile && imageFile.size > 0) {
       const fileName = `${post.slug}-${Date.now()}`;
       
-      // PROTEÇÃO: Só remove a antiga se post.image_url existir
       if (post.image_url) {
         const oldImageName = post.image_url.split('/').pop();
         if (oldImageName) {

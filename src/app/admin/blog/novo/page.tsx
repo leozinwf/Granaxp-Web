@@ -7,14 +7,12 @@ import { ArrowLeft, Save, Image as ImageIcon } from 'lucide-react';
 import { criarPost } from '../actions';
 import 'react-quill-new/dist/quill.snow.css';
 
-// Importa o editor corrigido de forma dinâmica
 const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false });
 
 export default function NovoPost() {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Configurações dos botões que vão aparecer no menu do editor
   const modules = {
     toolbar: [
       [{ 'header': [2, 3, false] }],
@@ -38,7 +36,7 @@ export default function NovoPost() {
       <form 
         action={async (formData) => {
           setLoading(true);
-          formData.append('content', content); // Anexa o HTML do editor
+          formData.append('content', content);
           await criarPost(formData);
         }} 
         className="space-y-6 bg-dark-card border border-dark-borda p-8 rounded-2xl shadow-xl"
@@ -46,19 +44,19 @@ export default function NovoPost() {
         
         <div>
           <label className="block text-sm font-medium text-dark-texto mb-2">Título do Artigo</label>
-          <input type="text" name="title" required className="w-full px-4 py-3 rounded-xl bg-dark-fundo border border-dark-borda text-slate-100 focus:border-roxo-claro focus:ring-1 focus:ring-roxo-claro outline-none transition-all"/>
+          <input type="text" name="title" required title="Título do Artigo" placeholder="Digite o título do artigo" className="w-full px-4 py-3 rounded-xl bg-dark-fundo border border-dark-borda text-slate-100 focus:border-roxo-claro focus:ring-1 focus:ring-roxo-claro outline-none transition-all"/>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-dark-texto mb-2 flex items-center gap-2">
             <ImageIcon size={16} /> Imagem de Capa
           </label>
-          <input type="file" name="image" accept="image/*" className="w-full px-4 py-3 rounded-xl bg-dark-fundo border border-dark-borda text-slate-100 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-roxo-claro/20 file:text-roxo-claro hover:file:bg-roxo-claro/30 transition-all"/>
+          <input type="file" name="image" accept="image/*" title="Imagem de Capa" className="w-full px-4 py-3 rounded-xl bg-dark-fundo border border-dark-borda text-slate-100 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-roxo-claro/20 file:text-roxo-claro hover:file:bg-roxo-claro/30 transition-all"/>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-dark-texto mb-2">Resumo</label>
-          <textarea name="excerpt" rows={2} className="w-full px-4 py-3 rounded-xl bg-dark-fundo border border-dark-borda text-slate-100 focus:border-roxo-claro focus:ring-1 focus:ring-roxo-claro outline-none resize-none"></textarea>
+          <textarea name="excerpt" rows={2} title="Resumo" placeholder="Escreva um breve resumo do artigo" className="w-full px-4 py-3 rounded-xl bg-dark-fundo border border-dark-borda text-slate-100 focus:border-roxo-claro focus:ring-1 focus:ring-roxo-claro outline-none resize-none"></textarea>
         </div>
 
         <div>
@@ -69,7 +67,7 @@ export default function NovoPost() {
         </div>
 
         <div className="flex items-center gap-3 py-2 mt-8">
-          <input type="checkbox" name="published" value="true" id="published" className="w-5 h-5 rounded bg-dark-fundo border-dark-borda text-roxo-claro focus:ring-roxo-claro"/>
+          <input type="checkbox" name="published" value="true" id="published" title="Publicar imediatamente" className="w-5 h-5 rounded bg-dark-fundo border-dark-borda text-roxo-claro focus:ring-roxo-claro"/>
           <label htmlFor="published" className="text-slate-200 font-medium cursor-pointer">Publicar imediatamente</label>
         </div>
 

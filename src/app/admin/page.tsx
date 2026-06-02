@@ -4,7 +4,6 @@ export default async function AdminDashboard() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   
-  // Buscando o nickname do usuário para dar boas-vindas
   const { data: profile } = await supabase
     .from('users')
     .select('nickname')

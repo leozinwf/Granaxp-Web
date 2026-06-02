@@ -11,14 +11,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     redirect('/login');
   }
 
-  // Verificação de Segurança Master: Checa se o usuário é admin na SUA tabela
   const { data: profile } = await supabase
     .from('users')
     .select('admin, nickname')
     .eq('id', user.id)
     .single();
 
-  // Se não for admin (ou se der erro e retornar false/null), chuta pra página inicial
   if (!profile?.admin) {
     redirect('/');
   }

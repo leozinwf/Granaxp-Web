@@ -8,7 +8,6 @@ export default async function Login(props: { searchParams: Promise<{ erro?: stri
   async function signIn(formData: FormData) {
     'use server';
     
-    // O .trim() remove espaços vazios no início e no final
     const email = (formData.get('email') as string)?.trim();
     const password = formData.get('password') as string;
     
@@ -17,7 +16,6 @@ export default async function Login(props: { searchParams: Promise<{ erro?: stri
     const { error } = await supabase.auth.signInWithPassword({ email, password });
 
     if (error) {
-      // Isso vai imprimir o motivo real da recusa no seu terminal do VS Code
       console.error("Motivo da recusa do Supabase:", error.message); 
       redirect('/login?erro=true');
     }
