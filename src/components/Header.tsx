@@ -44,17 +44,15 @@ export default function Header() {
           </Link>
           
           <div className="hidden md:flex items-center gap-8 font-medium text-sm text-dark-texto">
-            <Link href="/sobre" className="hover:text-roxo-claro transition-colors">Sobre</Link>
+            <Link href="/" className="hover:text-roxo-claro transition-colors">Inicio</Link>
             <Link href="/blog" className="hover:text-roxo-claro transition-colors">Blog</Link>
             <Link href="/suporte" className="hover:text-roxo-claro transition-colors">Suporte</Link>
+            <Link href="/sobre" className="hover:text-roxo-claro transition-colors">Sobre</Link>
           </div>
           
           <div className="hidden md:flex items-center gap-6">
-            <Link href="https://app.granaxp.com.br" className="text-dark-texto hover:text-white font-medium text-sm transition-colors">
-              Entrar
-            </Link>
             <Link href="https://app.granaxp.com.br/" className="bg-roxo-claro hover:bg-roxo-hover text-white px-5 py-2 rounded-full font-bold text-sm transition-all shadow-[0_0_15px_rgba(130,10,209,0.3)] hover:shadow-[0_0_25px_rgba(130,10,209,0.5)]">
-              Criar Conta
+              Acessar app
             </Link>
           </div>
 
