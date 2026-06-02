@@ -41,6 +41,10 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             <FileText size={20} />
             Posts do Blog
           </Link>
+          <Link href="/admin/suporte" className="flex items-center gap-3 px-4 py-3 rounded-xl text-dark-texto hover:bg-dark-borda/50 hover:text-slate-100 transition-colors">
+            <FileText size={20} />
+            Chamados de Suporte
+          </Link>
         </nav>
 
         {/* Botão de Logout usando Server Action */}
