@@ -65,7 +65,7 @@ export default function Footer() {
               <h4 className="text-slate-100 font-bold tracking-wide uppercase text-sm mb-2">Ajuda</h4>
               <Link href="/suporte" className="text-dark-texto text-sm hover:text-roxo-claro transition-colors w-fit">Central de Suporte</Link>
               <Link href="/contato" className="text-dark-texto text-sm hover:text-roxo-claro transition-colors w-fit">Contato Comercial</Link>
-              <a href="https://discord.gg/cyHqhhutCD" target="_blank" rel="noreferrer" className="text-dark-texto text-sm hover:text-roxo-claro transition-colors w-fit">Comunidade</a>
+              <a href="https://discord.gg/cyHqhhutCD" target="_blank" rel="noreferrer noopener" className="text-dark-texto text-sm hover:text-roxo-claro transition-colors w-fit">Comunidade</a>
             </div>
 
             {/* Bloco: Legal */}
