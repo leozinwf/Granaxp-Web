@@ -13,12 +13,12 @@ import {
 // Substitua pelas suas imagens reais do sistema
 // ============================================================================
 const IMAGENS = {
-  dashboardWeb: "https://placehold.co/1200x675/1A1A24/820AD1?text=Print+do+Sistema+Web+(PC)",
-  dashboardMobile: "https://placehold.co/600x1200/1A1A24/820AD1?text=Print+do+App+Mobile",
-  avatar: "https://placehold.co/150x150/1A1A24/820AD1?text=Avatar",
-  insignia1: "https://placehold.co/100x100/1A1A24/FF1493?text=Badge+1",
-  insignia2: "https://placehold.co/100x100/1A1A24/F59E0B?text=Badge+2",
-  insignia3: "https://placehold.co/100x100/1A1A24/10B981?text=Badge+3",
+  dashboardWeb: "https://mzeqqponsyrtmaukuxvm.supabase.co/storage/v1/object/public/blog-images/home.png",
+  dashboardMobile: "https://mzeqqponsyrtmaukuxvm.supabase.co/storage/v1/object/public/blog-images/home_mobile.png",
+  avatar: "https://mzeqqponsyrtmaukuxvm.supabase.co/storage/v1/object/public/blog-images/porquinho.png",
+  insignia1: "https://mzeqqponsyrtmaukuxvm.supabase.co/storage/v1/object/public/blog-images/insignia_aprendiz.png",
+  insignia2: "https://mzeqqponsyrtmaukuxvm.supabase.co/storage/v1/object/public/blog-images/insignia_estrategista.png",
+  insignia3: "https://mzeqqponsyrtmaukuxvm.supabase.co/storage/v1/object/public/blog-images/insignia_lenda.png",
 };
 
 export default function Home() {
